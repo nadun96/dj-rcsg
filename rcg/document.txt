@@ -1,0 +1,34 @@
+cd e/scripts
+activate
+cd ../../
+cd rcg
+deactivate
+python manage.py runserver 
+
+#install virtualenv	https://virtualenv.pypa.io/en/latest/cli_interface.html
+	best		pipx install virtualenv
+        create 		virtualenv <en_name>
+	now 		python -m pip install --user virtualenv
+
+#install django
+	pip install django==4.0
+
+#Start Django
+	django-admin startproject devpro
+
+#runserver
+	python manage.py runserver 
+
+#apps
+	python manage.py startapp leader
+
+#create super user
+	python manage.py createsuperuser
+
+
+#migrations
+	python manage.py makemigrations
+	python manage.py migrate
+
+#register app
+	settings name name.app.config

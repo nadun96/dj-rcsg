@@ -1,0 +1,76 @@
+{% extends 'store/base.html' %}
+{{title}}
+
+{% block content %}
+<div class="container-fluid py-3 border-bottom">
+    <div class="input-group">
+        <input type="search" class="form-control rounded-left" placeholder="Search" aria-label="Search"
+            aria-describedby="search-addon" />
+        <button type="button" class="btn btn-outline-primary">search</button>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <!-- item Item received date -->
+    <div class=" input-group mb-2 py-2 ">
+        <span class="input-group-text w-50 ">Received date</span>
+        <input class="form-control text-bg-primary bg-opacity-10 text-black-50" type="date" name="itemCode"
+            placeholder="" required>
+    </div>
+
+
+    <!-- item name -->
+    <div class="input-group mb-2 py-2">
+        <span class="input-group-text w-50">Item Name</span>
+        <input class="form-control text-bg-primary bg-opacity-10" type="text" name="itemName" placeholder="Ex: tent"
+            required>
+    </div>
+
+    <!-- item quantity -->
+    <div class=" input-group mb-2 py-2">
+        <span class="input-group-text w-50">Item quantity</span>
+        <input class="form-control text-bg-primary bg-opacity-10 text-black-50" type="number" name="itemQty" min="1"
+            placeholder="0" required>
+    </div>
+
+    <!-- item donour -->
+    <div class=" input-group mb-2 py-2 ">
+        <span class="input-group-text w-50">Donour Name</span>
+        <input class="form-control bg-opacity-10" type="text" name="isdonation" placeholder="Ex: Kusal Mendis">
+    </div>
+
+    <!-- item  expiry date -->
+    <div class=" input-group mb-2 py-2 ">
+        <span class="input-group-text w-50">Item expiry date</span>
+        <input class="form-control" type="date" name="expiry" placeholder="">
+    </div>
+
+    <!-- item measurement unit -->
+    <div class=" input-group mb-2 py-2 ">
+        <span class="input-group-text w-75">Item measurement unit</span>
+        <input class="form-control text-bg-primary bg-opacity-10" type="text" name="unit" placeholder="Ex: ml">
+    </div>
+
+    <!-- item  market price of a unit -->
+    <div class=" input-group mb-2 py-2 ">
+        <span class="input-group-text">Unit market price</span>
+        <span class="input-group-text">Rs.</span>
+        <input class="form-control text-bg-primary bg-opacity-10" type="number" name="Price" placeholder="000">
+    </div>
+
+    <!-- item  total price -->
+    <div class=" input-group mb-2 py-2">
+        <span class="input-group-text bg-info border-0 ">Total price</span>
+        <span class="input-group-text bg-info border-0">Rs.</span>
+        <input id="total" type="number" class="form-control bg-info text-black border-0" placeholder="50" name="total"
+            disabled>
+    </div>
+    <div class="form-group text-center m-1 py-2">
+        <div class="col-sm-offset-2">
+            <input type="submit" name="signin" id="login" value="Add Item" class="btn primary bg-primary px-5 py-2" />
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

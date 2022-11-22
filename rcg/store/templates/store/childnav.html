@@ -1,0 +1,17 @@
+<div class="container-fluid p-0 m-0">
+    <nav class="new">
+        <ul>
+            <li class="px-2 {% if title == 'manage' %} act bg-warning  rounded-2 {% endif %}" >
+                <a class=""  href={% url 'manage' %}>Manage</a></li>
+            <li class="px-2 {% if title == 'items' %} act bg-warning  rounded-2 {% endif %} ">
+                <a class="" href={% url 'items' %}>Items</a></li>
+            <li class="px-2 {% if title == 'broken' %} act bg-warning  rounded-2 {% endif %}">
+                <a class=""  href={% url 'broken_items' %}>Broken</a></li>
+            <li class="px-2 {% if title == 'lend' %} act bg-warning  rounded-2 {% endif %} ">
+                <a class="  "  href={% url 'lend_items' %} >Lend</a></li>
+            <li class="px-2 {% if title == 'reports' %} act bg-warning  rounded-2 {% endif %} ">
+                <a class=" "  href={% url 'Stock_reports' %}>Report</a></li>
+        </ul>
+
+    </nav>
+</div>

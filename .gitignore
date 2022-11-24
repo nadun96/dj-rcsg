@@ -1,2 +1,8 @@
 
 rcg/db.sqlite3
+rcg/login/__pycache__/admin.cpython-310.pyc
+rcg/login/__pycache__/models.cpython-310.pyc
+rcg/login/__pycache__/urls.cpython-310.pyc
+rcg/login/__pycache__/views.cpython-310.pyc
+rcg/login/templates/login/login.html
+rcg/rcg/__pycache__/settings.cpython-310.pyc

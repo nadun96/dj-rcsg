@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# User model reference
+# AUTH_USER_MODEL = 'login.User'
 
 # Application definition
 
@@ -37,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #login app regustered
-    'login.apps.LoginConfig',   
-    #store app registered
+    # login app registered
+    'login.apps.LoginConfig',
+    # store app registered
     'store.apps.StoreConfig',
 ]
 
@@ -125,3 +127,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MEDIA = 'media/'

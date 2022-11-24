@@ -1,4 +1,5 @@
 from django.db import models
+
 # Create your models here.
 
 
@@ -34,7 +35,7 @@ class new_user(models.Model):
     stugemail=models.EmailField()
     stugrade=models.IntegerField()
     stuclass=models.CharField(max_length=1)
-    sturegdate= models.DateField(auto_now=True, auto_now_add=False)
+    sturegdate= models.DateField(auto_now_add=True)
     stuentrance=models.IntegerField()
     sturesidance=models.TextField()
     stuguardian=models.CharField(max_length=200)
@@ -48,3 +49,8 @@ class new_user(models.Model):
     stumedical=models.FileField()
     stusports=models.CharField(max_length=200)
     stupassword=models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.stuname
+    
+        

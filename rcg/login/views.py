@@ -20,30 +20,47 @@ def register(request):
 
 def action_register(request):
     if request.method == "POST":
-        stuname = request.POST.get('stuname')
-        stubirthday = request.POST.get('stubirthday')
-        stuphoto = request.FILES['stuphoto']
-        stugemail = request.POST.get('stugemail')
-        stugrade = request.POST.get('stugrade')
-        stuclass = request.POST.get('stuclass')
-        sturegdate = datetime.date.today
-        stuentrance = request.POST.get('stuentrance')
-        sturesidance = request.POST.get('sturesidance')
-        stuguardian = request.POST.get('stuguardian')
-        stugtele = request.POST.get('stugtele')
-        stugemail = request.POST.get('stugemail')
-        stumother = request.POST.get('stumother')
-        stumothertele = request.POST.get('stumothertele')
-        stuotherskills = request.POST.get('stuotherskills')
-        stucertificate = request.FILES['stucertificate']
-        stuletter = request.FILES['stuletter']
-        stumedical = request.FILES['stumedical']
-        stusports = request.POST.get('stusports')
-        stupassword = request.POST.get('stupassword')
+        student_name = request.POST.get('stuname')
+        student_birthday = request.POST.get('stubirthday')
+        student_photo = request.FILES['stuphoto']
+        student_gemail = request.POST.get('stugemail')
+        student_grade = request.POST.get('stugrade')
+        student_class = request.POST.get('stuclass')
+        student_regdate = datetime.date.today
+        student_entrance = request.POST.get('stuentrance')
+        student_residance = request.POST.get('sturesidance')
+        student_guardian = request.POST.get('stuguardian')
+        student_gtele = request.POST.get('stugtele')
+        student_gemail = request.POST.get('stugemail')
+        student_mother = request.POST.get('stumother')
+        student_mothertele = request.POST.get('stumothertele')
+        student_otherskills = request.POST.get('stuotherskills')
+        student_certificate = request.FILES['stucertificate']
+        student_letter = request.FILES['stuletter']
+        student_medical = request.FILES['stumedical']
+        student_sports = request.POST.get('stusports')
+        student_password = request.POST.get('stupassword')
 
         # new_user create
-        nu = new_user.objects.create(stuname=stuname, stubirthday=stubirthday, sturegdate=sturegdate, stuphoto=stuphoto, stugemail=stugemail, stugrade=stugrade, stuclass=stuclass, stuentrance=stuentrance, sturesidance=sturesidance, stuguardian=stuguardian,
-                                     stugtele=stugtele, stumother=stumother, stumothertele=stumothertele, stuotherskills=stuotherskills, stucertificate=stucertificate, stuletter=stuletter, stumedical=stumedical, stusports=stusports, stupassword=stupassword)
+        nu = new_user.objects.create(
+            student_name=student_name, 
+            student_birthday=student_birthday, 
+            student_regdate=student_regdate, 
+            student_photo=student_photo, 
+            student_gemail=student_gemail, 
+            student_grade=student_grade, 
+            student_class=student_class, 
+            student_entrance=student_entrance, 
+            student_residance=student_residance, 
+            student_guardian=student_guardian,
+            student_gtele=student_gtele, 
+            student_mother=student_mother, 
+            student_mothertele=student_mothertele, 
+            student_otherskills=student_otherskills, 
+            student_certificate=student_certificate, 
+            student_letter=student_letter, 
+            student_medical=student_medical, 
+            student_sports=student_sports, student_password=student_password)
 
         # new_user save to database
         nu.save()

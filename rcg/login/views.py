@@ -6,14 +6,14 @@ from .models import new_user
 
 def login(request):
     context = {
-        'title': 'login',
+        'title': 'success'
     }
     return render(request, 'login/login.html', context)
 
 
 def register(request):
     context = {
-        'title': 'register',
+        'title': 'unsuccess'
     }
     return render(request, 'login/signup.html', context)
 
@@ -43,23 +43,24 @@ def action_register(request):
 
         # new_user create
         nu = new_user.objects.create(
-            student_name=student_name, 
-            student_birthday=student_birthday, 
-            student_regdate=student_regdate, 
-            student_photo=student_photo, 
-            student_gemail=student_gemail, 
-            student_grade=student_grade, 
-            student_class=student_class, 
-            student_entrance=student_entrance, 
-            student_residance=student_residance, 
+            student_name=student_name,
+            email=student_gemail,
+            student_birthday=student_birthday,
+            student_regdate=student_regdate,
+            student_photo=student_photo,
+            student_gemail=student_gemail,
+            student_grade=student_grade,
+            student_class=student_class,
+            student_entrance=student_entrance,
+            student_residance=student_residance,
             student_guardian=student_guardian,
-            student_gtele=student_gtele, 
-            student_mother=student_mother, 
-            student_mothertele=student_mothertele, 
-            student_otherskills=student_otherskills, 
-            student_certificate=student_certificate, 
-            student_letter=student_letter, 
-            student_medical=student_medical, 
+            student_gtele=student_gtele,
+            student_mother=student_mother,
+            student_mothertele=student_mothertele,
+            student_otherskills=student_otherskills,
+            student_certificate=student_certificate,
+            student_letter=student_letter,
+            student_medical=student_medical,
             student_sports=student_sports, student_password=student_password)
 
         # new_user save to database

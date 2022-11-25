@@ -18,32 +18,29 @@ def get_deafult_photo():
 
 
 class new_user(models.Model):
-
     user_id = models.OneToOneField(User, on_delete=models.CASCADE)
-    email = models.CharField(max_length=100)
     student_name = models.CharField(max_length=200)
-    student_birthday = models.DateField(null=False, Blank=False)
+    student_birthday = models.DateField(null=False)
     student_photo = models.ImageField(
         upload_to=get_photo_filepath, null=True, blank=True, default=get_deafult_photo)
-    student_gemail = models.EmailField(null=False, Blank=False)
-    student_grade = models.IntegerField(max_length=2, null=False, Blank=False)
+    student_gemail = models.EmailField(null=False)
+    student_grade = models.IntegerField(null=False)
     student_class = models.CharField(max_length=1)
-    student_regdate = models.DateField(
-        auto_now_add=True, null=False, Blank=False)
-    student_entrance = models.IntegerField(
-        max_length=10, null=False, Blank=False)
-    student_residance = models.TextField(null=False, Blank=False)
+    student_regdate = models.DateField(auto_now_add=True, null=False)
+    student_entrance = models.IntegerField(null=False)
+    student_residance = models.TextField(null=False, blank=False)
     student_guardian = models.CharField(max_length=200)
-    student_gtele = models.IntegerField(null=False, Blank=False)
+    student_gtele = models.IntegerField(null=False, blank=False)
     student_mother = models.CharField(max_length=200)
-    student_mothertele = models.IntegerField(null=True, Blank=True)
+    student_mothertele = models.IntegerField(null=True, blank=True)
     student_otherskills = models.CharField(max_length=200)
-    student_certificate = models.FileField(null=False, Blank=False)
-    student_letter = models.FileField(null=False, Blank=False)
-    student_medical = models.FileField(null=True, Blank=True)
-    student_sports = models.CharField(max_length=200, null=True, Blank=True)
+    student_certificate = models.FileField(null=False, blank=False)
+    student_letter = models.FileField(null=False, blank=False)
+    student_medical = models.FileField(null=True, blank=True)
+    student_sports = models.CharField(max_length=200, null=True, blank=True)
     student_password = models.CharField(
-        max_length=200, null=False, Blank=False)
+        max_length=200, null=False, blank=False)
+    email = models.CharField(default=student_gemail,max_length=100)
 
     def __str__(self):
         return self.email
@@ -53,21 +50,22 @@ class new_user(models.Model):
 ##
 
 
-class Member(new_user):
-    is_Officer = models.BooleanField(default=False)
-    ROLES = ('Secretary', 'Treasurer', 'President', 'Storekeeper')
-    role = models.CharField(
-        choices=ROLES, default='Member')
-    is_Treasurer = models.BooleanField(default=False)
-    is_Secretary = models.BooleanField(default=False)
+# class Member(new_user):
+#     is_Officer = models.BooleanField(default=False)
+#     ROLES = ('Secretary', 'Treasurer', 'President', 'Storekeeper')
+#     role = models.CharField(
+#         choices=ROLES, default='Member')
+#     is_Treasurer = models.BooleanField(default=False)
+#     is_Secretary = models.BooleanField(default=False)
 
-    def __str__(self):
-        return self.user_name
+#     def __str__(self):
+#         return self.user_name
 
 
 ##
 # model for user manager
 ##
+
 class MyAccountManager(BaseUserManager):
 
     def create_user(self, email, username, password=None):
